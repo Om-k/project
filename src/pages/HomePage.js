@@ -1,0 +1,15 @@
+import CallToAction from '../components/CallToAction';
+import Specials from '../components/Specials';
+import Chicago from '../components/Chicago';
+
+function HomePage() {
+  return (
+    <>
+      <CallToAction />
+      <Specials />
+      <Chicago />
+    </>
+  );
+}
+
+export default HomePage;
