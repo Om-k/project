@@ -11,6 +11,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 3rem;
+  border-bottom: 1px solid white;
 }
 
 .nav-links {
@@ -48,6 +49,10 @@
   border-radius: 16px;
   max-height: 50vh;
   object-fit: cover;
+}
+
+.subPara {
+  margin-top: 10px;
 }
 
 /* SPECIALS */
@@ -119,4 +124,255 @@
   .nav-links {
     display: none;
   }
+}
+
+
+/* Chicago Footer Section */
+.chicago {
+  background-color: #495e57;
+  /* dark greenish background */
+  color: white;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.chicago h2 {
+  color: #f4ce14;
+  /* brand yellow accent */
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.chicago h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.chicago p {
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+
+/* Booking Form */
+.booking-form {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #edefee;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.booking-form fieldset {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.booking-form legend {
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 0 0.5rem;
+}
+
+.booking-form label {
+  margin-top: 1rem;
+  display: block;
+  font-weight: 500;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form button {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.booking-form button {
+  margin-top: 1.5rem;
+  background-color: #f4ce14;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.booking-form button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.booking-form button:not(:disabled):hover {
+  background-color: #ee9972;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .booking-form {
+    padding: 1rem;
+    margin: 1rem;
+  }
+}
+
+
+/* Booking Slots */
+.booking-slots {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.booking-slots h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #495e57;
+}
+
+.booking-slots ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  justify-content: center;
+}
+
+.booking-slot {
+  padding: 0.5rem 1rem;
+  background-color: #f4ce14;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-align: center;
+}
+
+.booking-slot:hover,
+.booking-slot:focus {
+  background-color: #ee9972;
+  outline: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .booking-slots ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+/* NAV */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  background-color: #495e57;
+  color: white;
+  position: relative;
+}
+
+.nav-logo {
+  color: #f4ce14;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover,
+.nav-links li a:focus {
+  color: #f4ce14;
+  outline: none;
+}
+
+/* Hamburger for mobile */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #495e57;
+    width: 200px;
+    display: none;
+    padding: 1rem;
+    border-radius: 0 0 8px 8px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 0.5rem 0;
+  }
+}
+
+
+/* Confirmed Booking */
+.confirmed-booking {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  background-color: #edefee;
+  padding: 2rem;
+  text-align: center;
+}
+
+.confirmation-container {
+  background-color: #495e57;
+  color: white;
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  max-width: 400px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.confirmation-container h1 {
+  color: #f4ce14;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.confirmation-container p {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
 }

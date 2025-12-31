@@ -1,9 +1,9 @@
 function Specials() {
   return (
-    <section className="specials">
+    <section className="specials" aria-label="Weekly specials">
         <div className="specials-header">
-          <h2>This weeks specials!</h2>
-          <button>Online Menu</button>
+          <h2>This week's specials!</h2>
+          <button aria-label="View Online Menu">Online Menu</button>
         </div>
 
         <div className="cards">

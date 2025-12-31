@@ -8,6 +8,7 @@ import "./App.css";
 
 import { initializeTimes, submitAPI, updateTimes } from "./reducers";
 import ConfirmedBooking from "./pages/ConfirmedBooking";
+import Chicago from "./components/Chicago";
 
 
 const baseTimes = ["17:00", "18:00", "19:00", "20:00", "21:00"];
@@ -21,7 +22,7 @@ function App() {
     initializeTimes
   );
 
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   // Step 2: submitForm function
   const submitForm = (formData) => {
@@ -48,6 +49,8 @@ function App() {
         />
         <Route path="/confirmed" element={<ConfirmedBooking />} />
       </Routes>
+      <Chicago />
+
     </>
   );
 }

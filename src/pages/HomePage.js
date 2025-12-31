@@ -4,11 +4,10 @@ import Chicago from '../components/Chicago';
 
 function HomePage() {
   return (
-    <>
+    <main>
       <CallToAction />
       <Specials />
-      <Chicago />
-    </>
+    </main>
   );
 }
 

@@ -4,7 +4,7 @@ import BookingSlots from "../components/BookingSlots";
 function BookingPage({ availableTimes, dispatch,submitForm }) {
   return (
     <>
-      <h1>Reserve a Table</h1>
+      <h1 style={{marginTop:'10px'}} >Reserve a Table</h1>
 
       <BookingForm
         availableTimes={availableTimes}
