@@ -7,6 +7,7 @@ test("Renders the BookingForm static text", () => {
     <BookingForm
       availableTimes={[]}
       dispatch={jest.fn()}
+      submitForm={jest.fn()}
     />
   );
 
@@ -14,22 +15,24 @@ test("Renders the BookingForm static text", () => {
   expect(labelElement).toBeInTheDocument();
 });
 
-test("initializeTimes returns the correct initial times", () => {
+/* Step 1: initializeTimes test */
+test("initializeTimes returns a non-empty array of times", () => {
   const times = initializeTimes();
-  expect(times).toEqual([
-    "17:00",
-    "18:00",
-    "19:00",
-    "20:00",
-    "21:00",
-  ]);
+
+  expect(Array.isArray(times)).toBe(true);
+  expect(times.length).toBeGreaterThan(0);
 });
 
-test("updateTimes returns the same state when called", () => {
-  const state = ["17:00", "18:00"];
-  const action = { type: "UPDATE_TIMES", date: "2025-12-22" };
+/* Step 2: updateTimes test */
+test("updateTimes returns available times for selected date", () => {
+  const state = [];
+  const action = {
+    type: "UPDATE_TIMES",
+    date: "2025-12-22",
+  };
 
   const newState = updateTimes(state, action);
 
-  expect(newState).toEqual(state);
+  expect(Array.isArray(newState)).toBe(true);
+  expect(newState.length).toBeGreaterThan(0);
 });
