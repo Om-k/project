@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import { useReducer } from "react";
 
 import Nav from "./components/Nav";
@@ -6,30 +6,11 @@ import HomePage from "./pages/HomePage";
 import BookingPage from "./pages/BookingPage";
 import "./App.css";
 
+import { initializeTimes, submitAPI, updateTimes } from "./reducers";
+import ConfirmedBooking from "./pages/ConfirmedBooking";
+
 
 const baseTimes = ["17:00", "18:00", "19:00", "20:00", "21:00"];
-
-// Initialize available times
-const initializeTimes = () => {
-  return baseTimes;
-};
-
-// Reducer function
-const updateTimes = (state, action) => {
-  if (action.type === "UPDATE_TIMES") {
-
-    if (action.date === "2025-12-22") {
-
-      return [...baseTimes, "22:00"];
-    }
-
-    // Any other date → reset to base times
-    return baseTimes;
-  }
-
-  return state;
-};
-
 
 
 function App() {
@@ -39,6 +20,15 @@ function App() {
     [],
     initializeTimes
   );
+
+    const navigate = useNavigate();
+
+  // Step 2: submitForm function
+  const submitForm = (formData) => {
+    if (submitAPI(formData)) {
+      navigate("/confirmed");
+    }
+  };
 
   return (
     <>
@@ -52,9 +42,11 @@ function App() {
             <BookingPage
               availableTimes={availableTimes}
               dispatch={dispatch}
+              submitForm={submitForm}
             />
           }
         />
+        <Route path="/confirmed" element={<ConfirmedBooking />} />
       </Routes>
     </>
   );
